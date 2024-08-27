@@ -1,43 +1,113 @@
 @charset "UTF-8"; 
 :root{
     --corbege: #e6ecf1;
-    --cormarromclaro: #A69B7D;
+    --cormarromclaro: rgb(119, 119, 119);
     --cormarromescuro: #9D7B6F;
     --corvermelho: #8C463F;
     --corverde: #5E8C65;
+    --corverde2: #406145;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--corbege);
 }
 
 body{
-
-    height: 100vh;
     background-color: var(--corbege);
 }
-/*
-form{
-    background-color: var(--cormarromclaro);
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    border: 1px solid #406145;
+    padding: 5px;
+    border-radius: 8px;
+}
+.container{/*container principal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+} 
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    width: 90vw;
+    height: 60vh;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 20px;
+} 
+.box::before{
+    content: "";
+    position: absolute;
+    background-color: #5E8C65;
+    width: 40%;
+    height: 100%;
 }
-#label{
+.primeiro-box {/*box cadastrar*/
+    display: flex;
+} 
+.coluna-um{/*para ir para o login*/
+    flex: 1 0 auto;
+    text-align: center;
+    z-index: 10;
+} 
+.coluna-dois{ /*para realizar o cadastro*/
+    display: flex;
+    flex: 2 0 auto;
+    flex-direction: column;
+    align-items: center;
 
 }
 
+.segundo-box{ /*para realizar o login*/
+    position: absolute;
+    display: none;
+}
+
+/*TEXTOS*/
+.titulo{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.paragrafo{
+    color: var(--corverde2);
+}
+.cadastrar{
+    color: var(--corverde2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    justify-content: center;
+}
 input{
     border: none;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 8px;
-}
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 
+}
 button{
-    padding: 5px;
+    padding: 7px;
     border-radius: 6px;
     border: none;
-    width: ;
-}*/
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--corverde2);
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
