@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Login</title>
 </head>
-<body>
+<body class="cadastrar-js">
     <div class="container"><!--Container principal-->
         <div class="box primeiro-box"> 
             <div class="coluna-um">
                 <h2 class="titulo ola">Olá!</h2>
                 <p>Já possui um cadastro?</p>
-                <p>Entre em sua conta</p>
-                <button class="botao">Entrar</button>
+                <p>Entre em sua conta</p> <br>
+                <button id="btnEntrar" class="botao">Entrar</button>
             </div>
 
             <div class="coluna-dois">
@@ -23,7 +23,7 @@
                 <div class="social-midia">
                     <ul>
                         <li>
-                            <a href="#"><i class="fa-brands fa-google" style="color:#406145;"></i></a>
+                            <a class="google" href="#"><i class="fa-brands fa-google" style="color:#406145;"></i></a>
                         </li>
                     </ul> <br>
                 </div>
@@ -35,12 +35,12 @@
                         <input type="text" placeholder="Nome">
                     </div>
                     <div class="img-input">
-                        <img src="imagens/mail.png" alt="email" style="width: 18px;">
+                        <img src="imagens/mail.png" alt="email" style="width: 20px;">
                         <input type="email" placeholder="Email">
                     </div>
 
                     <div class="img-input">
-                        <img src="imagens/lock.png" alt="lock" style="width: 18px;">
+                        <img src="imagens/lock.png" alt="lock" style="width: 20px;">
                         <input type="password" placeholder="Senha" autocomplete="new-password">
                     </div>
 
@@ -51,29 +51,40 @@
             
         <div class="box segundo-box">
             <div class="coluna-um">
-                <h2 class="titulo">Não possui cadastro?</h2>
-                <p class="paragrafo">Crie sua conta agora</p>
-                <button class="botao">Cadastrar</button>
+                <h2 class="titulo ola">Não possui cadastro?</h2>
+                <p>Crie sua conta agora</p>
+                <button id="btnCadastrar" class="botao">Cadastrar</button>
             </div>
 
             <div class="coluna-dois">
-                <h2 class="titulo">Bem-vindo de volta!</h2>
+                <h2 class="titulo cadastrar">Bem-vindo de volta!</h2>
                 <div class="social-midia">
                     <ul>
-                        <li><a href="#">Google</a></li>
-                    </ul>
+                        <li>
+                            <a class="google" href="#"><i class="fa-brands fa-google" style="color:#406145;"></i></a>
+                        </li>
+                    </ul> <br>
                 </div>
                 <p class="paragrafo">faça login utilizando e-mail e senha</p>
                 
                 <form action="" class="formulario">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Senha" autocomplete= 'new-password'>
-                    <a href="3">Esqueceu sua senha?</a>
+                    <div class="img-input">
+                        <img src="imagens/mail.png" alt="email" style="width: 20px;">
+                        <input type="email" placeholder="Email">
+                    </div>
+
+                    <div class="img-input">
+                        <img src="imagens/lock.png" alt="lock" style="width: 20px;">
+                        <input type="password" placeholder="Senha" autocomplete="new-password">
+                    </div>
+                    <a href="#">Esqueceu sua senha?</a>
                     <button class="botao">Entrar</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/aaea750203.js" crossorigin="anonymous"></script>
 </body>
 </html>
