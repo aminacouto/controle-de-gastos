@@ -171,40 +171,48 @@ button:hover{
 
 .entrar-js .primeiro-box .coluna-um {
     z-index: -1;
+    opacity: 0;
 }
 .entrar-js .primeiro-box .coluna-dois {
     z-index: -1;
-}
-.entrar-js .segundo-box .coluna-dois {
-    z-index: 11;
+    opacity: 0;
 }
 .entrar-js .segundo-box .coluna-um {
-    z-index: 13;
+    z-index: 14;
+}
+.entrar-js .segundo-box .coluna-dois {
+    z-index: 12;   
 }
 .entrar-js .box::before {
     left: 60%;
     border-radius: 0 10px 10px 0;
-    animation: slidein 0.8s;
+    animation: slidein 1s;
     z-index: 13;
 }
 /**/
 
-.cadastrar-js .box::before {
-    animation: slideout 0.8s;
-    z-index: 13;
+.cadastrar-js .segundo-box .coluna-um {
+    z-index: -1; 
+    opacity: 0;
 }
-.cadastrar-js .segundo-box .coluna-um,
 .cadastrar-js .segundo-box .coluna-dois {
     z-index: -1; 
+    opacity: 0;
+
 }
 .cadastrar-js .primeiro-box .coluna-dois {
-    z-index: 11; 
+    z-index: 12; 
 }
 .cadastrar-js .primeiro-box .coluna-um {
+    z-index: 14;
+}
+.cadastrar-js .box::before {
+    animation: slideout 1s;
     z-index: 13;
 }
 
 /* DESLOCAMENTO CONTEÚDO ATRÁS DO BOX:BEFORE*/
+
 .entrar-js .primeiro-box .coluna-dois {
     z-index: -1;
     position: relative;
@@ -271,19 +279,29 @@ button:hover{
     }
 }
 
-@keyframes deslocamentoDir{
-    from{
+@keyframes deslocamentoEsq{
+    from {
+        left: 0;
         opacity: 1;
     }
-    to{
+    20%{
+        opacity: 0;
+    }
+    to {
+        left: -100px;
         opacity: 0;
     }
 }
-@keyframes deslocamentoEsq{
-    from{
+@keyframes deslocamentoDir{
+    from {
+        left: 0;
         opacity: 1;
     }
-    to{
-        left: -110px;
+    20%{
+        opacity: 0;
+    }
+    to {
+        left: 100px;
+        opacity: 0;
     }
 }
