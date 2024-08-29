@@ -98,13 +98,24 @@ Primeira parte*/
 
 
 /*TEXTOS*/
+h2{
+    font-size: 20px;
+}
+p{
+    font-size: 12px;
+}
+
 .titulo{
-    font-size: 28px;
+    /*font-size: 28px;*/
     font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .paragrafo{
     color: var(--corverde2);
+    text-align: center;
+
 }
 .cadastrar{
     color: var(--corverde2);
@@ -143,7 +154,7 @@ button:hover{
 #novaSenha{
     color: var(--corverde2);
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /*POSICIONAMENTO DOS BOXES PARA TRANSIÇÃO JS
@@ -173,13 +184,13 @@ button:hover{
 .entrar-js .box::before {
     left: 60%;
     border-radius: 0 10px 10px 0;
-    animation: slidein 1.3s;
+    animation: slidein 0.8s;
     z-index: 12;
 }
 /**/
 
 .cadastrar-js .box::before {
-    animation: slideout 1.3s;
+    animation: slideout 0.8s;
     z-index: 12;
 }
 .cadastrar-js .segundo-box .coluna-um,
@@ -199,12 +210,49 @@ button:hover{
     .box{
         width: 80vw;
     }
+    h2{
+        font-size: 28px;
+    }
+    p{
+        font-size: 16px;
+    }
+    a{
+        font-size: 14px;
+    }
 }
 
 @media screen  and (min-width: 992px) {
     .box{
         width: 60vw;
     }
+    h2{
+        font-size: 28px;
+    }
+    p{
+        font-size: 16px;
+    }
+    a{
+        font-size: 14px;
+    }
 }
 
 /*ANIMAÇÕES*/
+@keyframes slidein{
+    from {
+        left: 0;
+
+    }
+    to{
+        left: 60%;
+    }
+}
+
+@keyframes slideout{
+    from {
+        left: 60%;
+
+    }
+    to{
+        left: 0;
+    }
+}
