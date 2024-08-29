@@ -160,6 +160,7 @@ button:hover{
 .entrar-js E .cadastrar-js serão adicionados no js*/
 
 /*Remove a sobreposição das divs*/
+/*
 .entrar-js .primeiro-box {
     display: none;
 }
@@ -190,7 +191,7 @@ button:hover{
 
 .cadastrar-js .box::before {
     animation: slideout 0.8s;
-    z-index: 12;
+    z-index: 13;
 }
 .cadastrar-js .segundo-box .coluna-um,
 .cadastrar-js .segundo-box .coluna-dois {
@@ -203,17 +204,17 @@ button:hover{
     z-index: 13;
 }
 
-/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO BOX:BEFORE*/
 .entrar-js .primeiro-box .coluna-dois {
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.3s;
+    animation: deslocamentoEsq 1.3s forwards;
 }
 
 .cadastrar-js .segundo-box .coluna-dois {
     position: relative;
     z-index: -1;
-    animation: deslocamentoDir 1.3s;
+    animation: deslocamentoDir 1.3s forwards;
 }
 
 
@@ -272,21 +273,17 @@ button:hover{
 
 @keyframes deslocamentoDir{
     from{
-        z-index: 12;
-        left: 0;
+        opacity: 1;
     }
     to{
-        z-index: -1;
-        left: 110px;
+        opacity: 0;
     }
 }
 @keyframes deslocamentoEsq{
     from{
-        z-index: 12;
-        left: 0;
+        opacity: 1;
     }
     to{
-        z-index: -1;
         left: -110px;
     }
 }
