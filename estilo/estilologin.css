@@ -106,7 +106,6 @@ p{
 }
 
 .titulo{
-    /*font-size: 28px;*/
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -179,13 +178,13 @@ button:hover{
     z-index: 11;
 }
 .entrar-js .segundo-box .coluna-um {
-    z-index: 12;
+    z-index: 13;
 }
 .entrar-js .box::before {
     left: 60%;
     border-radius: 0 10px 10px 0;
     animation: slidein 0.8s;
-    z-index: 12;
+    z-index: 13;
 }
 /**/
 
@@ -203,6 +202,20 @@ button:hover{
 .cadastrar-js .primeiro-box .coluna-um {
     z-index: 13;
 }
+
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
+.entrar-js .primeiro-box .coluna-dois {
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1.3s;
+}
+
+.cadastrar-js .segundo-box .coluna-dois {
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 1.3s;
+}
+
 
 /*Responsividade*/
 
@@ -254,5 +267,26 @@ button:hover{
     }
     to{
         left: 0;
+    }
+}
+
+@keyframes deslocamentoDir{
+    from{
+        z-index: 12;
+        left: 0;
+    }
+    to{
+        z-index: -1;
+        left: 110px;
+    }
+}
+@keyframes deslocamentoEsq{
+    from{
+        z-index: 12;
+        left: 0;
+    }
+    to{
+        z-index: -1;
+        left: -110px;
     }
 }
