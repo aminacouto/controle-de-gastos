@@ -67,13 +67,13 @@ a:hover{
     width: 40%;
     text-align: center;
     z-index: 10;
+
 } 
 .coluna-dois{ /*para realizar o cadastro*/
     display: flex;
     width: 60%;
     flex-direction: column;
     align-items: center;
-
 }
 /*SEGUNDO BOX*/
 .segundo-box{ /*para realizar o login com link para ir para o cadastro*/
@@ -159,16 +159,6 @@ button:hover{
 /*POSICIONAMENTO DOS BOXES PARA TRANSIÇÃO JS
 .entrar-js E .cadastrar-js serão adicionados no js*/
 
-/*Remove a sobreposição das divs*/
-/*
-.entrar-js .primeiro-box {
-    display: none;
-}
-.cadastrar-js .segundo-box{
-    display: none;
-}
-/**/
-
 .entrar-js .primeiro-box .coluna-um {
     z-index: -1;
     opacity: 0;
@@ -179,9 +169,11 @@ button:hover{
 }
 .entrar-js .segundo-box .coluna-um {
     z-index: 14;
+    animation: surgir 1s;
 }
 .entrar-js .segundo-box .coluna-dois {
     z-index: 12;   
+    animation: surgir 1s;
 }
 .entrar-js .box::before {
     left: 60%;
@@ -200,11 +192,14 @@ button:hover{
     opacity: 0;
 
 }
-.cadastrar-js .primeiro-box .coluna-dois {
-    z-index: 12; 
-}
+
 .cadastrar-js .primeiro-box .coluna-um {
     z-index: 14;
+    animation: surgir 1s;
+}
+.cadastrar-js .primeiro-box .coluna-dois {
+    z-index: 12; 
+    animation: surgir 1s;
 }
 .cadastrar-js .box::before {
     animation: slideout 1s;
@@ -303,5 +298,14 @@ button:hover{
     to {
         left: 100px;
         opacity: 0;
+    }
+}
+
+@keyframes surgir{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
