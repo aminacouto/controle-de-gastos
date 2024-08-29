@@ -24,11 +24,16 @@ body{
 ul{ /*link para cadastrar com conta google*/
     list-style-type: none;
 }
+li{
+    font-size: 12px;
+    color: var(--corverde2);
+}
 .google{ /*link para cadastrar com conta google*/
     text-decoration: none;
     border: 1px solid #406145;
     padding: 3px 5px;
     border-radius: 8px;
+    display: inline;
 }
 a:hover{
     opacity: 0.8;
@@ -55,8 +60,9 @@ a:hover{
     width: 40%;
     height: 100%;
     border-radius: 10px 0 0 10px;
-
+    box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.4);
     left: 0;
+    
 }
 
 /*PRIMEIRO BOX*/
@@ -114,7 +120,9 @@ p{
 .paragrafo{
     color: var(--corverde2);
     text-align: center;
-
+}
+.social-midia{
+    margin-top: 6px;
 }
 .cadastrar{
     color: var(--corverde2);
@@ -124,7 +132,11 @@ form {
     display: flex;
     flex-direction: column;
 }
-
+a{
+    color: var(--corverde2);
+    text-align: center;
+    font-size: 12px;
+}
 .img-input{
     display: flex;
     align-items: center;
@@ -148,12 +160,6 @@ button{
 button:hover{
     cursor: pointer;
     opacity: 0.8;
-}
-
-#novaSenha{
-    color: var(--corverde2);
-    text-align: center;
-    font-size: 12px;
 }
 
 /*POSICIONAMENTO DOS BOXES PARA TRANSIÇÃO JS
@@ -180,6 +186,7 @@ button:hover{
     border-radius: 0 10px 10px 0;
     animation: slidein 1s;
     z-index: 13;
+    box-shadow: -2px 0px 3px rgba(0, 0, 0, 0.4);
 }
 /**/
 
