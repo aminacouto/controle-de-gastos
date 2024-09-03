@@ -35,19 +35,15 @@
                         <img src="imagens/person.png" alt="person">
                         <input type="text" placeholder="Nome" id="nome" required>
                     </div>
-                    <!--<span class="erro"></span>-->
                     
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email" required>
                         <input type="email" placeholder="Email" id="email" required>
-                        <!--<span class="erro">Email inválido</span>-->
-
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
                         <input type="password" placeholder="Senha" autocomplete="new-password" id="senha" required>
-                        <!--<span class="erro" >Senha inválida</span>-->
                     </div>
 
                     <button class="botao">Cadastrar</button>
@@ -74,15 +70,19 @@
                 <form action="" class="formulario">
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email">
-                        <input type="email" placeholder="Email" id="email" required>
+                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin" onchange="validacao()" required>
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senha" required>
+                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin" onchange="validacao()" required>
                     </div>
-                    <a href="#" id="novaSenha">Esqueceu sua senha?</a> <br>
-                    <button class="botao" onclick="logar()">Entrar</button>
+                    
+                    <span id="erro"> -Email ou senha incorretos</span>
+
+                    <button id="novaSenha" disabled="true">Esqueceu sua senha?</button> <br>
+
+                    <button class="botao" id="botaoEntrar" disabled="true" onclick="logar(event)">Entrar</button>
                 </form>
             </div>
         </div>
@@ -90,5 +90,6 @@
 
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/aaea750203.js" crossorigin="anonymous"></script>
+    <script src="js/firebase.js"></script>
 </body>
 </html>

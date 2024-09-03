@@ -1,6 +1,6 @@
 @charset "UTF-8"; 
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /*fonte da pagina de cadastro*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /*fonte corpo*/
 
 :root{
     --corfundo: hsla(0, 0%, 5%, 0.4);
@@ -12,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
-    font-family: "Playfair Display", serif;
+    font-family: "Roboto", sans-serif;    
 }
 .fundo{
     background-image: url(../imagens/fundo.png), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -67,45 +67,6 @@ a:hover{
     left: 0;
     
 }
-
-/*PRIMEIRO BOX*/
-.primeiro-box {/*box cadastrar, que tem link para entrar*/
-    display: flex;
-} 
-.coluna-um{/*para ir para o login*/
-    width: 40%;
-    text-align: center;
-    z-index: 10;
-
-} 
-.coluna-dois{ /*para realizar o cadastro*/
-    display: flex;
-    width: 60%;
-    flex-direction: column;
-    align-items: center;
-}
-/*SEGUNDO BOX*/
-.segundo-box{ /*para realizar o login com link para ir para o cadastro*/
-    position: absolute;
-    display: flex;
-}
-
-/*POSICIONAMENTO DOS BOXES
-Primeira parte*/
-
-.primeiro-box .coluna-dois{
-    z-index: 11;
-}
-.segundo-box .coluna-um {
-    order: 2;
-    z-index: -1;
-}
-.segundo-box .coluna-dois {
-    order: 1;
-    z-index: -1;
-}
-
-
 /*TEXTOS*/
 h2{
     font-size: 20px;
@@ -140,24 +101,29 @@ a{
     align-items: center;
     background-color: var(--corverde);
     border-radius: 6px;
-    margin-bottom: 10px;
-    gap: 5px;
+    margin: 5px 0 5px 0;
 }
 .img-input img{
     width: 22px;
     padding: 2px 0 2px 2px;
-    color: #ffffff;
 }
 input{
     border: none;
     border-radius: 8px;
-    padding: 8px ;
+    padding: 8px;
+    color: black;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 input:focus{
     background-color: white;
-    color: var(--corverde2);
+    color: black;
     outline: none;
+}
+
+#erro{
+    display: none;
+    font-size: 12px;
+    color: rgb(255, 8, 0);
 }
 button{
     padding: 7px;
@@ -166,11 +132,59 @@ button{
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: var(--corverde2);
 }
-
+.formulario #novaSenha{
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+}
+button[disabled]{
+    opacity: 0.5;
+}
+button[disabled]:hover{
+    opacity: 0.5;
+}
 button:hover{
     cursor: pointer;
     opacity: 0.8;
 }
+/*PRIMEIRO BOX*/
+.primeiro-box {/*box cadastrar, que tem link para entrar*/
+    display: flex;
+} 
+.coluna-um{/*para ir para o login*/
+    width: 40%;
+    text-align: center;
+    z-index: 10;
+
+} 
+.coluna-dois{ /*para realizar o cadastro*/
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*SEGUNDO BOX*/
+.segundo-box{ /*para realizar o login com link para ir para o cadastro*/
+    position: absolute;
+    display: flex;
+}
+
+/*POSICIONAMENTO DOS BOXES
+Primeira parte*/
+
+.primeiro-box .coluna-dois{
+    z-index: 11;
+}
+.segundo-box .coluna-um {
+    order: 2;
+    z-index: -1;
+}
+.segundo-box .coluna-dois {
+    order: 1;
+    z-index: -1;
+}
+
 
 /*POSICIONAMENTO DOS BOXES PARA TRANSIÇÃO JS
 .entrar-js E .cadastrar-js serão adicionados no js*/
