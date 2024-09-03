@@ -13,8 +13,8 @@ btnCadastar.addEventListener ("click", function (){
     body.className = "cadastrar-js";
 })
 
-/*REALIZAR O LOGIN - ir para a pag principal */
-const auth = getAuth();
+
+/*const auth = getAuth();
 function logar(event){
     event.preventDefault();
     const email = document.getElementById('emailLogin').value;
@@ -28,7 +28,7 @@ function logar(event){
             console.log('erro', error);
             document.getElementById('erro').style.display = 'block';
         });
-}
+}*/
 
 //VALIDAÇÃO DOS BOTÕES
 function validacao(){
