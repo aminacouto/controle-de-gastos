@@ -16,7 +16,13 @@ btnCadastar.addEventListener ("click", function (){
 /*REALIZAR O LOGIN - ir para a pag principal */
 function logar(event){
     event.preventDefault();
-    window.location.href = "paginaPrincipal.html";
+    firebaseConfig.auth().signInWithEmailAndPassword(
+        form.email().value, form.senha().value
+    ).then(response =>{
+        window.location.href = "paginaPrincipal.html";
+      }).catch(error =>{
+        console.log('erro', error);
+      });
 }
 
 //VALIDAÇÃO DOS BOTÕES

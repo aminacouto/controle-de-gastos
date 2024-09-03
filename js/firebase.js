@@ -11,8 +11,4 @@
 
   const app = initializeApp(firebaseConfig);
 
-  firebaseConfig.auth().signInWithEmailAndPassword("ami@email.com", "123456").tnen(response =>{
-    console.log('ok', response)
-  }).catch(error =>{
-    console.log('erro', error)
-  });
+  
