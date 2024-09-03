@@ -14,15 +14,20 @@ btnCadastar.addEventListener ("click", function (){
 })
 
 /*REALIZAR O LOGIN - ir para a pag principal */
+const auth = getAuth();
 function logar(event){
     event.preventDefault();
-    firebaseConfig.auth().signInWithEmailAndPassword(
-        form.email().value, form.senha().value
-    ).then(response =>{
-        window.location.href = "paginaPrincipal.html";
-      }).catch(error =>{
-        console.log('erro', error);
-      });
+    const email = document.getElementById('emailLogin').value;
+    const senha = document.getElementById('senhaLogin').value;
+
+    signInWithEmailAndPassword(auth, email, senha)
+        .then((response) => {
+            window.location.href = "paginaPrincipal.html";
+        })
+        .catch((error) => {
+            console.log('erro', error);
+            document.getElementById('erro').style.display = 'block';
+        });
 }
 
 //VALIDAÇÃO DOS BOTÕES
