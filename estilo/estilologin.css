@@ -3,12 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); /*fonte da pagina de cadastro*/
 
 :root{
-    --corfundo: #e6ecf1;
-    --cormarromclaro: rgb(119, 119, 119);
-    --cormarromescuro: #9D7B6F;
-    --corvermelho: #8C463F;
-    --corverde: #4A7453;
-    --corverde2: #354D37;
+    --corfundo: hsla(0, 0%, 5%, 0.4);
+    --corverde: hsla(133, 22%, 37%, 0.6);
+    --corverde2: hsla(125, 18%, 25%, 0.6);
 }
 *{
     margin: 0;
@@ -17,20 +14,25 @@
     color: white;
     font-family: "Playfair Display", serif;
 }
-
+.fundo{
+    background-image: url(../imagens/fundo.png), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-blend-mode: multiply;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 body{
-    background-color: #1a1a1a;
+    background-color: var(--corfundo);
 }
 ul{ /*link para cadastrar com conta google*/
     list-style-type: none;
 }
 li{
     font-size: 12px;
-    color: var(--corverde2);
 }
 .google{ /*link para cadastrar com conta google*/
     text-decoration: none;
-    border: 1px solid #406145;
+    border: 1px solid var(--corverde);
     padding: 3px 5px;
     border-radius: 8px;
     display: inline;
@@ -52,12 +54,12 @@ a:hover{
     width: 98vw;
     height: 60vh;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    background-color: #cecece;
+    background-color: var(--corfundo);
 } 
 .box::before{
     content: "";
     position: absolute;
-    background-color: #4A7453;
+    background-color: var(--corverde);
     width: 40%;
     height: 100%;
     border-radius: 10px 0 0 10px;
@@ -119,14 +121,10 @@ p{
 }
 
 .paragrafo{
-    color: var(--corverde2);
     text-align: center;
 }
 .social-midia{
     margin-top: 6px;
-}
-.cadastrar{
-    color: var(--corverde2);
 }
 
 form {
@@ -134,7 +132,6 @@ form {
     flex-direction: column;
 }
 a{
-    color: var(--corverde2);
     text-align: center;
     font-size: 12px;
 }
@@ -146,7 +143,6 @@ a{
 }
 input{
     border: none;
-    color: var(--corverde2);
     border-radius: 8px;
     padding: 8px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -225,13 +221,13 @@ button:hover{
 .entrar-js .primeiro-box .coluna-dois {
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.3s forwards;
+    animation: deslocamentoEsq 2s forwards;
 }
 
 .cadastrar-js .segundo-box .coluna-dois {
     position: relative;
     z-index: -1;
-    animation: deslocamentoDir 1.3s forwards;
+    animation: deslocamentoDir 2s forwards;
 }
 
 

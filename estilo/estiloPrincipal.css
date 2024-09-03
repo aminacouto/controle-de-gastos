@@ -5,11 +5,8 @@
 
 :root{
     --corfundo: hsl(0, 0%, 5%);
-    --cormarromclaro: rgb(119, 119, 119);
-    --cormarromescuro: #9D7B6F;
-    --corvermelho: #8C463F;
-    --corverde: #4A7453;
-    --corverde2: #354D37;
+    --corverde: hsla(133, 22%, 37%, 0.6);
+    --corverde2: hsla(125, 18%, 25%, 0.6);
 }
 *{
     margin: 0;
