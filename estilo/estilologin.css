@@ -138,13 +138,20 @@ a{
 .img-input{
     display: flex;
     align-items: center;
+    background-color: var(--corverde);
+    border-radius: 6px;
     margin-bottom: 10px;
     gap: 5px;
+}
+.img-input img{
+    width: 22px;
+    padding: 2px 0 2px 2px;
+    color: #ffffff;
 }
 input{
     border: none;
     border-radius: 8px;
-    padding: 8px;
+    padding: 8px ;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 input:focus{
@@ -267,7 +274,6 @@ button:hover{
 @keyframes slidein{
     from {
         left: 0;
-
     }
     to{
         left: 60%;
@@ -277,7 +283,6 @@ button:hover{
 @keyframes slideout{
     from {
         left: 60%;
-
     }
     to{
         left: 0;
