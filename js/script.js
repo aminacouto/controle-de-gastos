@@ -12,6 +12,7 @@ btnCadastar.addEventListener("click", function () {
     body.className = "cadastrar-js";
 })
 
+/*LOGIN */
 //VALIDAÇÃO DOS BOTÕES
 function validacao() {
     const emailValido = isEmailValido();
@@ -20,10 +21,9 @@ function validacao() {
     const senhaValida = isSenhaValida();
     document.getElementById('botaoEntrar').disabled = !emailValido || !senhaValida;
 }
-
 /*VALIDAR EMAIL*/
 function isEmailValido() {
-    const email = form.email().value;
+    const email = form.emailLogin().value;
     if (!email) {
         return false;
     }
@@ -31,7 +31,37 @@ function isEmailValido() {
 }
 /*VALIDAR SENHA*/
 function isSenhaValida() {
-    const senha = form.senha().value;
+    const senha = form.senhaLogin().value;
+    if (!senha) {
+        return false;
+    }
+    return true;
+}
+
+/*CADASTRO */
+// VALIDAÇÃO DOS BOTÕES
+function cadastrarUsuario(){
+    window.location.href = "../paginaPrincipal"
+}
+function validacaoCadastro() {
+    const emailValido = isEmailCadastroValido();
+    const senhaValida = isSenhaCadastroValida();
+
+    document.getElementById('botaoCadastrar').disabled = !emailValido || !senhaValida;
+}
+
+/* VALIDAR EMAIL DE CADASTRO */
+function isEmailCadastroValido() {
+    const email = form.emailCadastro().value;
+    if (!email) {
+        return false;
+    }
+    return validaEmail(email);
+}
+
+/* VALIDAR SENHA DE CADASTRO */
+function isSenhaCadastroValida() {
+    const senha = form.senhaCadastro().value;
     if (!senha) {
         return false;
     }
@@ -42,44 +72,10 @@ function validaEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-
 const form = {
-    email: () => document.getElementById("emailLogin"),
-    senha: () => document.getElementById("senhaLogin"),
+    emailLogin: () => document.getElementById("emailLogin"),
+    senhaLogin: () => document.getElementById("senhaLogin"),
+
+    emailCadastro: () => document.getElementById("emailCadastrar"),
+    senhaCadastro: () => document.getElementById("senhaCadastrar")
 }
-
-
-/***************************************************/
-/*import { register, login } from './firebase.js';
-
-// Função de login
-document.getElementById('botaoEntrar').addEventListener('click', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('emailLogin').value;
-    const password = document.getElementById('senhaLogin').value;
-
-    login(email, password)
-        .then((userCredential) => {
-            alert('Login realizado com sucesso!');
-            // Aqui você pode redirecionar ou fazer outras ações
-        })
-        .catch((error) => {
-            document.getElementById('erro').innerText = 'Email ou senha incorretos';
-        });
-});
-
-// Função de cadastro
-document.querySelector('.formulario').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('senha').value;
-
-    register(email, password)
-        .then((userCredential) => {
-            alert('Cadastro realizado com sucesso!');
-            // Aqui você pode redirecionar ou fazer outras ações
-        })
-        .catch((error) => {
-            alert('Erro ao cadastrar: ' + error.message);
-        });
-});*/
