@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/estilologin.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Login</title>
 </head>
+
 <body class="cadastrar-js">
     <div class="fundo"></div>
     <div class="container"><!--Container principal-->
-        <div class="box primeiro-box"> 
+        <div class="box primeiro-box">
             <div class="coluna-um">
                 <h2 class="titulo ola">Olá!</h2>
                 <p>Já possui cadastro?</p>
@@ -24,18 +27,19 @@
                 <div class="social-midia">
                     <ul>
                         <li>
-                            <a class="google" href="#"><i class="fa-brands fa-google"></i> | Cadastro com conta Google</a>
+                            <a class="google" href="#"><i class="fa-brands fa-google"></i> | Cadastro com conta
+                                Google</a>
                         </li>
                     </ul> <br>
                 </div>
                 <p class="paragrafo">Registre email e senha</p>
-                
+
                 <form action="" class="formulario">
                     <div class="img-input">
                         <img src="imagens/person.png" alt="person">
                         <input type="text" placeholder="Nome" id="nome" required>
                     </div>
-                    
+
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email" required>
                         <input type="email" placeholder="Email" id="email" required>
@@ -46,11 +50,11 @@
                         <input type="password" placeholder="Senha" autocomplete="new-password" id="senha" required>
                     </div>
 
-                    <button class="botao">Cadastrar</button>
+                    <button class="botao" id="botaoCadastrar" onclick="cadastrar()">Cadastrar</button>
                 </form>
             </div>
         </div>
-            
+
         <div class="box segundo-box">
             <div class="coluna-um">
                 <h2 class="titulo ola">Primeira vez aqui?</h2>
@@ -70,14 +74,16 @@
                 <form action="" class="formulario">
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email">
-                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin" onchange="validacao()" required>
+                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin"
+                            onchange="validacao()" required>
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin" onchange="validacao()" required>
+                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin"
+                            onchange="validacao()" required>
                     </div>
-                    
+
                     <span id="erro"> -Email ou senha incorretos</span>
 
                     <button id="novaSenha" disabled="true">Esqueceu sua senha?</button> <br>
@@ -88,8 +94,10 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="https://kit.fontawesome.com/aaea750203.js" crossorigin="anonymous"></script>
-    <script type="module" src="js/firebase.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/aaea750203.js" crossorigin="anonymous"></script> <!--icone google-->
 </body>
+
 </html>

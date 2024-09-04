@@ -142,6 +142,7 @@ button[disabled]{
 }
 button[disabled]:hover{
     opacity: 0.5;
+    cursor: no-drop;
 }
 button:hover{
     cursor: pointer;
