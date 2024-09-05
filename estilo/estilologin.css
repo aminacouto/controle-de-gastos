@@ -1,51 +1,64 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /*fonte corpo*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*fonte corpo*/
 
-:root{
+:root {
     --corfundo: hsla(0, 0%, 5%, 0.4);
     --corverde: hsla(133, 22%, 37%, 0.6);
     --corverde2: hsla(125, 18%, 25%, 0.6);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
-    font-family: "Roboto", sans-serif;    
+    font-family: "Roboto", sans-serif;
 }
-.fundo{
+
+.fundo {
     background-image: url(../imagens/fundo.png), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: multiply;
     position: fixed;
     width: 100%;
     height: 100%;
 }
-body{
+
+body {
     background-color: var(--corfundo);
 }
-ul{ /*link para cadastrar com conta google*/
+
+ul {
+    /*link para cadastrar com conta google*/
     list-style-type: none;
 }
-li{
+
+li {
     font-size: 12px;
 }
-.google{ /*link para cadastrar com conta google*/
+
+.google {
+    /*link para cadastrar com conta google*/
     text-decoration: none;
     border: 1px solid var(--corverde);
     padding: 3px 5px;
     border-radius: 8px;
     display: inline;
 }
-a:hover{
+
+a:hover {
     opacity: 0.8;
 }
-.container{/*container principal*/
+
+.container {
+    /*container principal*/
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;   
-} 
+    height: 100vh;
+}
+
 .box {
     justify-content: space-between;
     align-items: center;
@@ -55,8 +68,9 @@ a:hover{
     height: 60vh;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     background-color: var(--corfundo);
-} 
-.box::before{
+}
+
+.box::before {
     content: "";
     position: absolute;
     background-color: var(--corverde);
@@ -65,26 +79,29 @@ a:hover{
     border-radius: 10px 0 0 10px;
     box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.4);
     left: 0;
-    
+
 }
+
 /*TEXTOS*/
-h2{
+h2 {
     font-size: 20px;
 }
-p{
+
+p {
     font-size: 12px;
 }
 
-.titulo{
+.titulo {
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-.paragrafo{
+.paragrafo {
     text-align: center;
 }
-.social-midia{
+
+.social-midia {
     margin-top: 6px;
 }
 
@@ -92,73 +109,89 @@ form {
     display: flex;
     flex-direction: column;
 }
-a{
+
+a {
     text-align: center;
     font-size: 12px;
 }
-.img-input{
+
+.img-input {
     display: flex;
     align-items: center;
     background-color: var(--corverde);
     border-radius: 6px;
     margin: 5px 0 5px 0;
 }
-.img-input img{
+
+.img-input img {
     width: 22px;
     padding: 2px 0 2px 2px;
 }
-input{
+
+input {
     border: none;
     border-radius: 8px;
     padding: 8px;
     color: black;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
-input:focus{
+
+input:focus {
     background-color: white;
     color: black;
     outline: none;
 }
 
-#erro{
+#erro {
     display: none;
     font-size: 12px;
     color: rgb(255, 8, 0);
 }
-button{
+
+button {
     padding: 7px;
     border-radius: 6px;
     border: none;
     box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
     background-color: var(--corverde2);
 }
-.formulario #novaSenha{
+
+.formulario #novaSenha {
     background-color: transparent;
     box-shadow: none;
     text-decoration: underline;
 }
-button[disabled]{
+/*
+button[disabled] {
     opacity: 0.5;
 }
-button[disabled]:hover{
+
+button[disabled]:hover {
     opacity: 0.5;
     cursor: no-drop;
-}
-button:hover{
+}*/
+
+button:hover {
     cursor: pointer;
     opacity: 0.8;
 }
+
 /*PRIMEIRO BOX*/
-.primeiro-box {/*box cadastrar, que tem link para entrar*/
+.primeiro-box {
+    /*box cadastrar, que tem link para entrar*/
     display: flex;
-} 
-.coluna-um{/*para ir para o login*/
+}
+
+.coluna-um {
+    /*para ir para o login*/
     width: 40%;
     text-align: center;
     z-index: 10;
 
-} 
-.coluna-dois{ /*para realizar o cadastro*/
+}
+
+.coluna-dois {
+    /*para realizar o cadastro*/
     display: flex;
     width: 60%;
     flex-direction: column;
@@ -166,7 +199,8 @@ button:hover{
 }
 
 /*SEGUNDO BOX*/
-.segundo-box{ /*para realizar o login com link para ir para o cadastro*/
+.segundo-box {
+    /*para realizar o login com link para ir para o cadastro*/
     position: absolute;
     display: flex;
 }
@@ -174,13 +208,15 @@ button:hover{
 /*POSICIONAMENTO DOS BOXES
 Primeira parte*/
 
-.primeiro-box .coluna-dois{
+.primeiro-box .coluna-dois {
     z-index: 11;
 }
+
 .segundo-box .coluna-um {
     order: 2;
     z-index: -1;
 }
+
 .segundo-box .coluna-dois {
     order: 1;
     z-index: -1;
@@ -194,18 +230,22 @@ Primeira parte*/
     z-index: -1;
     opacity: 0;
 }
+
 .entrar-js .primeiro-box .coluna-dois {
     z-index: -1;
     opacity: 0;
 }
+
 .entrar-js .segundo-box .coluna-um {
     z-index: 14;
     animation: surgir 1s;
 }
+
 .entrar-js .segundo-box .coluna-dois {
-    z-index: 12;   
+    z-index: 12;
     animation: surgir 1s;
 }
+
 .entrar-js .box::before {
     left: 60%;
     border-radius: 0 10px 10px 0;
@@ -213,14 +253,16 @@ Primeira parte*/
     z-index: 13;
     box-shadow: -2px 0px 3px rgba(0, 0, 0, 0.4);
 }
+
 /**/
 
 .cadastrar-js .segundo-box .coluna-um {
-    z-index: -1; 
+    z-index: -1;
     opacity: 0;
 }
+
 .cadastrar-js .segundo-box .coluna-dois {
-    z-index: -1; 
+    z-index: -1;
     opacity: 0;
 
 }
@@ -229,10 +271,12 @@ Primeira parte*/
     z-index: 14;
     animation: surgir 1s;
 }
+
 .cadastrar-js .primeiro-box .coluna-dois {
-    z-index: 12; 
+    z-index: 12;
     animation: surgir 1s;
 }
+
 .cadastrar-js .box::before {
     animation: slideout 1s;
     z-index: 13;
@@ -255,87 +299,101 @@ Primeira parte*/
 
 /*Responsividade*/
 
-@media screen  and (min-width: 768px) and (max-width: 992px) {
-    .box{
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .box {
         width: 80vw;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
     }
-    p{
+
+    p {
         font-size: 16px;
     }
-    a{
+
+    a {
         font-size: 14px;
     }
 }
 
-@media screen  and (min-width: 992px) {
-    .box{
+@media screen and (min-width: 992px) {
+    .box {
         width: 60vw;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
     }
-    p{
+
+    p {
         font-size: 16px;
     }
-    a{
+
+    a {
         font-size: 14px;
     }
 }
 
 /*ANIMAÇÕES*/
-@keyframes slidein{
+@keyframes slidein {
     from {
         left: 0;
     }
-    to{
+
+    to {
         left: 60%;
     }
 }
 
-@keyframes slideout{
+@keyframes slideout {
     from {
         left: 60%;
     }
-    to{
+
+    to {
         left: 0;
     }
 }
 
-@keyframes deslocamentoEsq{
+@keyframes deslocamentoEsq {
     from {
         left: 0;
         opacity: 1;
     }
-    20%{
+
+    20% {
         opacity: 0;
     }
+
     to {
         left: -100px;
         opacity: 0;
     }
 }
-@keyframes deslocamentoDir{
+
+@keyframes deslocamentoDir {
     from {
         left: 0;
         opacity: 1;
     }
-    20%{
+
+    20% {
         opacity: 0;
     }
+
     to {
         left: 100px;
         opacity: 0;
     }
 }
 
-@keyframes surgir{
-    from{
+@keyframes surgir {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
