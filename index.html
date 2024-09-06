@@ -93,6 +93,38 @@
             </div>
         </div>
     </div>
+    <!--IMPORTAÇÃO DO FIREBASE-->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB3JQBCKeBIN34LDQwIggL6WQgRkhYcPFs",
+            authDomain: "controle-de-gastos-123e0.firebaseapp.com",
+            projectId: "controle-de-gastos-123e0",
+            storageBucket: "controle-de-gastos-123e0.appspot.com",
+            messagingSenderId: "637250162104",
+            appId: "1:637250162104:web:ef33d411bf39b113d7134d"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+    </script>
+    <script type="module" src="js/firebase.js"></script>
+
+    <script type="module">
+        import { cadastrarUsuario, login } from "./js/firebase.js";
+        // Event listener para o formulário de cadastro
+        document.getElementById("botaoCadastrar").addEventListener("click", (event) => {
+            event.preventDefault();
+            cadastrarUsuario();
+        });
+        // Event listener para o formulário de login
+        document.getElementById("botaoEntrar").addEventListener("click", (event) => {
+            event.preventDefault();
+            login();
+        });
+    </script>
 
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/aaea750203.js" crossorigin="anonymous"></script> <!--icone google-->
