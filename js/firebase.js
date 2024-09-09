@@ -3,12 +3,11 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 const auth = getAuth();
 
 export function cadastrarUsuario() {
-    //event.preventDefault();
     const email = document.getElementById("emailCadastrar").value;
     const senha = document.getElementById("senhaCadastrar").value;
 
     if (email === '' || senha === "") {
-        alert("Por favor, preencha todos os campos antes de continuar.");
+        alert("Por favor, preencha todos os campos para realizar o cadastro.");
         return;
     }
 
@@ -23,7 +22,6 @@ export function cadastrarUsuario() {
 };
 
 export function login() {
-    //event.preventDefault();
     const email = document.getElementById("emailLogin").value;
     const senha = document.getElementById("senhaLogin").value;
 

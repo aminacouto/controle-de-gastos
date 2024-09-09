@@ -161,7 +161,7 @@ button {
     box-shadow: none;
     text-decoration: underline;
 }
-/*
+
 button[disabled] {
     opacity: 0.5;
 }
@@ -169,7 +169,7 @@ button[disabled] {
 button[disabled]:hover {
     opacity: 0.5;
     cursor: no-drop;
-}*/
+}
 
 button:hover {
     cursor: pointer;
