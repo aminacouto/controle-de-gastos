@@ -42,3 +42,4 @@ export function login() {
 
 document.querySelector(".formulario").addEventListener("submit", cadastrarUsuario);
 document.querySelector(".formulario").addEventListener("submit", login);
+
