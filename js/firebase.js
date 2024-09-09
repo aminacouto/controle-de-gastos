@@ -34,7 +34,7 @@ export function login() {
 
     signInWithEmailAndPassword(auth, email, senha)
         .then((userCredential) => {
-            window.location.href = "../paginaPrincipal.html";
+            window.location.href = "../emBreve.html";
         })
         .catch((error) => {
             const errorMessage = error.message;
