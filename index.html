@@ -101,7 +101,6 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-        import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyB3JQBCKeBIN34LDQwIggL6WQgRkhYcPFs",
@@ -114,13 +113,12 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
 
     </script>
     <script type="module" src="js/firebase.js"></script>
 
     <script type="module">
-        import { cadastrarUsuario, login, redefinirSenha, entrarGoogle } from "./js/firebase.js";
+        import { cadastrarUsuario, login, redefinirSenha } from "./js/firebase.js";
         // Event listener para o formulário de cadastro
         document.getElementById("botaoCadastrar").addEventListener("click", (event) => {
             event.preventDefault();
@@ -135,11 +133,6 @@
         document.getElementById("novaSenha").addEventListener("click", (event) => {
             event.preventDefault();
             redefinirSenha();
-        });
-        // Adiciona o evento de clique ao link de login com Google
-        document.getElementById("entrarGoogle").addEventListener("click", (event) => {
-            event.preventDefault();
-            entrarGoogle();
         });
     </script>
 
