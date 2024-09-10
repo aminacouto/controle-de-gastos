@@ -162,7 +162,9 @@ button {
     text-decoration: underline;
 }
 
-#botaoEntrar:disabled, #botaoCadastrar:disabled{
+#botaoEntrar:disabled,
+#botaoCadastrar:disabled,
+#novaSenha:disabled {
     opacity: 0.5;
 }
 

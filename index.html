@@ -34,7 +34,7 @@
                 </div>
                 <p class="paragrafo">Registre email e senha</p>
 
-                <form action="" class="formulario">
+                <form action="" class="formulario formularioCadastrar">
                     <div class="img-input">
                         <img src="imagens/person.png" alt="person">
                         <input type="text" placeholder="Nome" id="nome" required>
@@ -42,12 +42,14 @@
 
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email" required>
-                        <input type="email" placeholder="Email" id="emailCadastrar" required onchange="verificarCampos()">
+                        <input type="email" placeholder="Email" id="emailCadastrar" required
+                            onchange="verificarCampos()">
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="new-password" id="senhaCadastrar" required onchange="verificarCampos()">
+                        <input type="password" placeholder="Senha" autocomplete="new-password" id="senhaCadastrar"
+                            required onchange="verificarCampos()">
                     </div>
 
                     <button class="botao" id="botaoCadastrar" onclick="cadastrarUsuario()">Cadastrar</button>
@@ -71,20 +73,22 @@
                         </li>
                     </ul> <br> <br>
                 </div>
-                <form action="" class="formulario">
+                <form action="" class="formulario formularioLogin">
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email">
-                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin" onchange="verificarCampos()">
+                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin"
+                            onchange="verificarCampos()">
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin" required onchange="verificarCampos()">
+                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin"
+                            required onchange="verificarCampos()">
                     </div>
 
                     <span id="erro"> Email ou senha incorretos</span>
 
-                    <button id="novaSenha">Esqueceu sua senha?</button> <br>
+                    <button type="button" id="novaSenha" onclick="redefinirSenha()">Esqueceu sua senha?</button> <br>
 
                     <button class="botao" id="botaoEntrar" onclick="login()">Entrar</button>
                 </form>
@@ -111,7 +115,7 @@
     <script type="module" src="js/firebase.js"></script>
 
     <script type="module">
-        import { cadastrarUsuario, login } from "./js/firebase.js";
+        import { cadastrarUsuario, login, redefinirSenha } from "./js/firebase.js";
         // Event listener para o formulário de cadastro
         document.getElementById("botaoCadastrar").addEventListener("click", (event) => {
             event.preventDefault();
@@ -121,6 +125,11 @@
         document.getElementById("botaoEntrar").addEventListener("click", (event) => {
             event.preventDefault();
             login();
+        });
+        // Event listener para o botão de redefinir senha
+        document.getElementById("novaSenha").addEventListener("click", (event) => {
+            event.preventDefault();
+            redefinirSenha();
         });
     </script>
 
