@@ -162,7 +162,7 @@ button {
     text-decoration: underline;
 }
 
-button[disabled] {
+#botaoEntrar:disabled, #botaoCadastrar:disabled{
     opacity: 0.5;
 }
 

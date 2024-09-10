@@ -42,13 +42,12 @@
 
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email" required>
-                        <input type="email" placeholder="Email" id="emailCadastrar" required>
+                        <input type="email" placeholder="Email" id="emailCadastrar" required onchange="verificarCampos()">
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="new-password" id="senhaCadastrar"
-                            required>
+                        <input type="password" placeholder="Senha" autocomplete="new-password" id="senhaCadastrar" required onchange="verificarCampos()">
                     </div>
 
                     <button class="botao" id="botaoCadastrar" onclick="cadastrarUsuario()">Cadastrar</button>
@@ -75,16 +74,15 @@
                 <form action="" class="formulario">
                     <div class="img-input">
                         <img src="imagens/mail.png" alt="email">
-                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin" required>
+                        <input type="email" placeholder="Email" autocomplete="email" id="emailLogin" onchange="verificarCampos()">
                     </div>
 
                     <div class="img-input">
                         <img src="imagens/lock.png" alt="lock">
-                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin"
-                            required>
+                        <input type="password" placeholder="Senha" autocomplete="current-password" id="senhaLogin" required onchange="verificarCampos()">
                     </div>
 
-                    <span id="erro"> -Email ou senha incorretos</span>
+                    <span id="erro"> Email ou senha incorretos</span>
 
                     <button id="novaSenha">Esqueceu sua senha?</button> <br>
 
