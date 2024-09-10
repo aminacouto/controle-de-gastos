@@ -6,10 +6,9 @@ import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/fir
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
-// Adiciona o evento de clique ao link de login com Google
-document.getElementById("loginGoogle").addEventListener("click", (event) => {
-    event.preventDefault();
 
+function entrarGoogle() {
+    const botao = document.getElementById("loginGoogle")
     // Inicia o login com Google
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -22,7 +21,8 @@ document.getElementById("loginGoogle").addEventListener("click", (event) => {
             console.error('Erro no login com Google:', error);
             alert("Ocorreu um erro ao fazer login com o Google.");
         });
-});
+}
+    
 
 // Função que verifica se os campos de login e cadastro estão preenchidos e habilita/desabilita os botões correspondentes
 function verificarCampos() {
