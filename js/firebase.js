@@ -80,7 +80,7 @@ export function login() {
     //realizar o login com Firebase Authentication
     signInWithEmailAndPassword(auth, email, senha)
         .then((userCredential) => {
-            window.location.href = "../paginaPrincipal";
+            window.location.href = "../paginaPrincipal.html";
         })
         .catch((error) => {
             const errorMessage = error.message;
