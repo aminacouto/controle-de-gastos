@@ -27,8 +27,8 @@
                 <div class="social-midia">
                     <ul>
                         <li>
-                            <a class="google" href="#"><i class="fa-brands fa-google"></i> | Cadastro com conta
-                                Google</a>
+                            <button class="google" href="#" id="loginGoogle"><i class="fa-brands fa-google"></i> | Cadastro com conta
+                                Google</button>
                         </li>
                     </ul> <br>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="social-midia">
                     <ul>
                         <li>
-                            <a class="google" href="#"><i class="fa-brands fa-google"></i> | Login com conta Google</a>
+                            <button class="google" href="#" id="loginGoogle"><i class="fa-brands fa-google"></i> | Login com conta Google</button>
                         </li>
                     </ul> <br> <br>
                 </div>
@@ -99,6 +99,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
         import { getAuth } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+        import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyB3JQBCKeBIN34LDQwIggL6WQgRkhYcPFs",
@@ -111,6 +112,8 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
     </script>
     <script type="module" src="js/firebase.js"></script>
 

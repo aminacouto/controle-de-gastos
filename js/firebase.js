@@ -1,9 +1,28 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
-
+import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 // Inicializa a autenticação do Firebase
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
+
+// Adiciona o evento de clique ao link de login com Google
+document.getElementById("loginGoogle").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Inicia o login com Google
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user;
+            console.log('Usuário logado com Google:', user);
+            window.location.href = "../emBreve.html";
+        })
+        .catch((error) => {
+            // Lidar com erros de login
+            console.error('Erro no login com Google:', error);
+            alert("Ocorreu um erro ao fazer login com o Google.");
+        });
+});
 
 // Função que verifica se os campos de login e cadastro estão preenchidos e habilita/desabilita os botões correspondentes
 function verificarCampos() {
