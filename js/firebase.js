@@ -80,7 +80,7 @@ export function login() {
     //realizar o login com Firebase Authentication
     signInWithEmailAndPassword(auth, email, senha)
         .then((userCredential) => {
-            window.location.href = "emBreve.html";
+            window.location.href = "controle-de-gastos/emBreve.html";
         })
         .catch((error) => {
             const errorMessage = error.message;
