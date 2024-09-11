@@ -33,7 +33,12 @@ body {
 }
 
 header {
-    background-color: hsla(133, 22%, 37%, 0.6);
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: var(--corverde);
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -59,10 +64,29 @@ header {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
+#btnBurguer {
+    background-color: transparent;
+    padding: 2px;
+    border: none;
+}
+#btnBurguer:hover{
+    cursor: pointer;
+    background-color: var(--corverde2);
+}
+.menu {
+    display: none;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
 main {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .contPrincipal {

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="estilo/estiloPrincipal.css">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <title>Página Inicial</title>
@@ -16,6 +18,17 @@
             <img src="imagens/logo.png" alt="logotipo">
             <h1>MeuGestor</h1>
         </div>
+        <button id="btnBurguer" onclick="abreMenu()">
+            <span class="material-symbols-outlined" id="burguer">
+                menu
+            </span>
+        </button>
+        <section class="menu" id="menu">
+            <ul>
+                <li id="itemMenu">Perfil</li>
+                <li id="itemMenu">Sair</li>
+            </ul>
+        </section>
     </header>
     <main>
         <section class="contPrincipal"> <!--CONTEÚDO PRINCIPAL/ONDE FICARÃO OS CARDS-->
@@ -29,7 +42,7 @@
             &copy; 2024 | Amina do Couto | Todos os direitos reservados.
         </p>
     </footer>
-    <script src=""></script>
+    <script src="estilo/estiloPrincipal.css"></script>
 </body>
 
 </html>
