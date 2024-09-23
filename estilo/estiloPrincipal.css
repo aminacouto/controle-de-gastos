@@ -75,10 +75,24 @@ header {
 }
 .menu {
     display: none;
+    position: absolute;
+    background-color: var(--corverde);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 0 10px 10px;
+    right: 0px;
+    top: 58px;
+    z-index: 1000;
+    padding: 10px;
 }
 
 .menu li {
     list-style-type: none;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+.menu li:hover{
+    background-color: var(--corverde);
+    border-radius: 10px;
 }
 
 main {
