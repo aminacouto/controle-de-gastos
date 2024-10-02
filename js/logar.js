@@ -1,9 +1,9 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+/*import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 
 // Inicializa a autenticação do Firebase
-const auth = getAuth();
+const auth = getAuth(); */
 
 // Função que verifica se os campos de login e cadastro estão preenchidos e habilita/desabilita os botões correspondentes
 function verificarCampos() {
@@ -32,8 +32,10 @@ function verificarCampos() {
         }
     }
 }
-export function redefinirSenha() {
-    const emailLogin = document.getElementById("emailLogin");
+function redefinirSenha() {
+    alert("Um email de redefinição de senha foi enviado. Verifique sua caixa de entrada.");
+
+    /*const emailLogin = document.getElementById("emailLogin");
 
     sendPasswordResetEmail(auth, emailLogin)
         .then(() => {
@@ -42,15 +44,16 @@ export function redefinirSenha() {
         .catch((error) => {
             const errorMessage = error.message;
             alert("Erro ao enviar email de redefinição: " + errorMessage);
-        });
+        }); */
 }
 
 
 //cadastrar novo usuário usando Firebase Authentication
-export function cadastrarUsuario() {
+function cadastrarUsuario() {
     const email = document.getElementById("emailCadastrar").value;
     const senha = document.getElementById("senhaCadastrar").value;
-
+    window.location.href = "./emBreve.html"
+    /*
     // Cria um novo usuário com e-mail e senha utilizando o Firebase Authentication
     createUserWithEmailAndPassword(auth, email, senha)
         .then((userCredential) => {
@@ -59,11 +62,11 @@ export function cadastrarUsuario() {
         .catch((error) => {
             const errorMessage = error.message;
             alert("Erro no cadastro: " + errorMessage);
-        });
+        }); */
 };
 
 // Função para realizar o login de um usuário
-export function login() {
+function login() {
     const email = document.getElementById("emailLogin").value;
     const senha = document.getElementById("senhaLogin").value;
     const span = document.getElementById("erro");
@@ -75,8 +78,11 @@ export function login() {
         span.style.display = "block";
         inputEmail.style.border = "1px solid red";
         inputSenha.style.border = "1px solid red";
-        return
-    };
+        return;
+    }
+    window.location.href = "./emBreve.html";
+
+    /*
     //realizar o login com Firebase Authentication
     signInWithEmailAndPassword(auth, email, senha)
         .then((userCredential) => {
@@ -87,23 +93,23 @@ export function login() {
             span.style.display = "block";
             inputEmail.style.border = "1px solid red";
             inputSenha.style.border = "1px solid red";
-        });
+        }); */
 }
 
-// Adiciona um listener ao formulário para realizar o cadastro quando for submetido
-document.querySelector(".formularioCadastrar").addEventListener("submit", cadastrarUsuario);
+// Event listeners para formulário de cadastro e login
+document.querySelector(".formularioCadastrar").addEventListener("submit", (event) => {
+    event.preventDefault();
+    cadastrarUsuario();
+});
 
-// Adiciona um listener ao formulário para realizar o login quando for submetido
-document.querySelector(".formularioLogin").addEventListener("submit", login);
+document.querySelector(".formularioLogin").addEventListener("submit", (event) => {
+    event.preventDefault();
+    login();
+});
 
-// Adiciona o listener para verificar quando o usuário digitar no campo de email
-document.getElementById("emailLogin").addEventListener("input", novaSenha);
-
-// Verifica os campos de login sempre que o usuário digitar
+// Verifica os campos de login e cadastro ao carregar a página
 document.getElementById("emailLogin").addEventListener("input", verificarCampos);
 document.getElementById("senhaLogin").addEventListener("input", verificarCampos);
-
-// Verifica os campos de cadastro sempre que o usuário digitar
 document.getElementById("emailCadastrar").addEventListener("input", verificarCampos);
 document.getElementById("senhaCadastrar").addEventListener("input", verificarCampos);
 
