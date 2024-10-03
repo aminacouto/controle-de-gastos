@@ -31,7 +31,18 @@
         </section>
     </header>
     <main>
-        <section class="contPrincipal"> <!--CONTEÚDO PRINCIPAL/ONDE FICARÃO OS CARDS-->
+        <section class="contPrincipal"> 
+            <section class="formulario">
+                <h2>Adicionar Gastos</h2>
+                <input type="text" id="nomeGasto" placeholder="Nome">
+                <input type="number" id="valorGasto" placeholder="Valor">
+                <select name="" id="tipoGasto">
+                    <option id="opcoesGastos">Tipo</option>
+                    <option id="opcoesGastos" value="Fixo">Fixo</option>
+                    <option id="opcoesGastos" value="Variavel">Variável</option>
+                </select>
+                <button id="btnAdd" onclick="addGasto()">Adicionar à lista</button>
+            </section>
 
         </section>
         <aside class="navegador"> <!--MENU?-->
