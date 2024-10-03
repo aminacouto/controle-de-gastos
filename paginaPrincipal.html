@@ -31,10 +31,10 @@
         </section>
     </header>
     <main>
-    </section>
-    <aside class="navegador"> <!--MENU?-->
-    </aside>
-        <section class="contPrincipal"> 
+        </section>
+        <aside class="navegador"> <!--MENU?-->
+        </aside>
+        <section class="contPrincipal">
             <section class="formulario">
                 <h2>Adicionar Gastos</h2>
                 <input type="text" id="nomeGasto" placeholder="Nome">
@@ -47,6 +47,14 @@
                 <input type="date" id="dataGasto">
                 <button id="btnAdd" onclick="addGasto()">Adicionar à lista</button>
             </section>
+
+            <!-- Navegação entre meses -->
+            <section class="navegacaoMeses">
+                <button id="btnAnterior" onclick="navegarMeses(-1)">&#10094;</button>
+                <span id="mesAtual"></span>
+                <button id="btnProximo" onclick="navegarMeses(1)">&#10095;</button>
+            </section>
+
             <section class="listaGastos"></section>
         </section>
 

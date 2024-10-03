@@ -129,6 +129,7 @@ input, #tipoGasto, option, #btnAdd{
     border-radius: 8px;
     padding: 8px;
 }
+
 #btnAdd {
     color: aliceblue;
     background-color: var(--corverde);
@@ -137,16 +138,61 @@ input, #tipoGasto, option, #btnAdd{
 #btnAdd:hover {
     background-color: var(--corverde2);
 }
+.navegacaoMeses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
+    border-top:  2px solid var(--corverde);
+}
+#btnAnterior, #btnProximo {
+    border: none;
+    background-color: var(--corverde);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 10px;
+}
+#btnAnterior:hover, #btnProximo:hover{
+    cursor: pointer;
+    background-color: var(--corverde2);
+}
+#mesAtual {
+    padding: 4px;
+    margin-top: 10px;
+}
 .listaGastos {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 8px;
     width: 90%;
     height: 80%;
-    border-top:  2px solid var(--corverde);
     overflow-y: auto;
+}
+.gastoItem {
+    border: 1px solid var(--corverde);
+    border-radius: 9px;
+    margin-bottom: 6px;
+}
+.gastoItem > h3 {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--corverde);
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.gastoItem > p {
+    padding: 10px;
+    font-size: 1rem;
+}
+.gastoItem > button {
+    background-color: var(--corverde);
+    padding: 2px;
+    margin: 0 0 2px 40px;
 }
 /* Personalizando a barra de rolagem */
 .listaGastos::-webkit-scrollbar {
