@@ -123,7 +123,7 @@ main {
 }
 input, #tipoGasto, option, #btnAdd{
     box-sizing: border-box;
-    color: rgb(133, 133, 133);
+    color: black;
     border: none;
     height: 30px;
     border-radius: 8px;
@@ -133,10 +133,11 @@ input, #tipoGasto, option, #btnAdd{
 #btnAdd {
     color: aliceblue;
     background-color: var(--corverde);
-    cursor: pointer;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 }
 #btnAdd:hover {
     background-color: var(--corverde2);
+    cursor: pointer;
 }
 .navegacaoMeses {
     display: flex;
@@ -149,6 +150,7 @@ input, #tipoGasto, option, #btnAdd{
 #btnAnterior, #btnProximo {
     border: none;
     background-color: var(--corverde);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     padding: 4px 8px;
     margin-top: 10px;
@@ -173,6 +175,7 @@ input, #tipoGasto, option, #btnAdd{
 }
 .gastoItem {
     border: 1px solid var(--corverde);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     border-radius: 9px;
     margin-bottom: 6px;
 }
@@ -193,6 +196,7 @@ input, #tipoGasto, option, #btnAdd{
 }
 #delete {
     background-color: var(--corverde);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     padding: 6px;
     border-radius: 8px;
     border: none;
