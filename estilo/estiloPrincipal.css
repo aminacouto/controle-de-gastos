@@ -123,7 +123,7 @@ main {
 }
 input, #tipoGasto, option, #btnAdd{
     box-sizing: border-box;
-    color: black;
+    color: rgb(133, 133, 133);
     border: none;
     height: 30px;
     border-radius: 8px;
@@ -186,13 +186,21 @@ input, #tipoGasto, option, #btnAdd{
     font-weight: bold;
 }
 .gastoItem > p {
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     font-size: 1rem;
 }
-.gastoItem > button {
+#delete {
     background-color: var(--corverde);
-    padding: 2px;
-    margin: 0 0 2px 40px;
+    padding: 6px;
+    border-radius: 8px;
+    border: none;
+}
+#delete:hover {
+    cursor: pointer;
+    background-color: var(--corverde2);
+
 }
 /* Personalizando a barra de rolagem */
 .listaGastos::-webkit-scrollbar {

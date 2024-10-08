@@ -78,19 +78,36 @@ function atualizarMeses() {
         secaoMes.classList.add('gastosMes');
 
         // Adiciona os gastos do mês selecionado na ordem correta
-        mesesGastos[mesSelecionado].forEach(gasto => {
+        mesesGastos[mesSelecionado].forEach((gasto, index) => {
             const dataFormatada = new Date(gasto.data).toLocaleDateString('pt-BR');
             const novoGasto = document.createElement('section');
             novoGasto.classList.add('gastoItem');
             novoGasto.innerHTML = `
                 <h3>${gasto.nome} <p>${dataFormatada}</p></h3>
-                <p>Valor: R$ ${gasto.valor}</p>
+                <p>Valor: R$ ${gasto.valor} <button id="delete" onclick="removerGasto('${mesSelecionado}', ${index})">Remover</button></p>
+                
             `;
             secaoMes.appendChild(novoGasto);
         });
 
         listaGastos.appendChild(secaoMes);
         document.getElementById('mesAtual').textContent = mesSelecionado;
+    }
+}
+function removerGasto(mesAno, index) {
+    if (mesesGastos[mesAno]) {
+        // Remove o gasto pelo índice
+        mesesGastos[mesAno].splice(index, 1);
+
+        // Verifica se o mês está vazio após a remoção e o remove se necessário
+        if (mesesGastos[mesAno].length === 0) {
+            delete mesesGastos[mesAno];
+            mesIndexAtual = Math.max(0, mesIndexAtual - 1);
+        }
+
+        // Atualiza o localStorage e a lista de meses
+        salvarGastosNoLocalStorage();
+        atualizarMeses();
     }
 }
 
