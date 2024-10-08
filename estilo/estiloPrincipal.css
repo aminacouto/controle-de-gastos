@@ -38,7 +38,7 @@ header {
     position: fixed;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     background-color: var(--corverde);
     padding: 10px;
     margin-bottom: 10px;
@@ -61,7 +61,7 @@ header {
 
 .divLogo h1 {
     font-family: "Outfit", sans-serif;
-    font-size: 30px;
+    font-size: 1.8rem;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -81,7 +81,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px 0 10px 10px;
     right: 0px;
-    top: 58px;
+    top: 56px;
     z-index: 1000;
     padding: 10px;
 }
@@ -259,29 +259,84 @@ footer {
     height: 50px;
     position: relative;
     bottom: 0;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 /*Responsividade*/
 /*TELAS MÉDIAS*/
 @media screen and (min-width: 768px) {
-    
+    body {
+        font-size: 1.1rem;
+    }
+    .contPrincipal, .graficos {
+        font-size: 1rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
 }
 
 /*TELAS GRANDES*/
 @media screen and (min-width: 1024px) {
+    body {
+        font-size: 1.2rem;
+    }
+    .contPrincipal, .graficos {
+        font-size: 1.1rem;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+
     main {
-        justify-content: start;
+        justify-content: center;
         align-items: start;
         flex-direction: row;
+        height: 100vh;
     }
     .contPrincipal {
-        margin: 80px 10px 20px 10px;
+        margin: 100px 10px 20px 10px;
         height: 520px;
     }
     .graficos {
-        margin: 80px 10px 20px 10px;
+        margin: 100px 10px 20px 10px;
         width: 50vw;
         height: ;
+    }
+}
+
+/*TELAS EXTRA GRANDES*/
+@media screen and (min-width: 3840px) {
+    body {
+        font-size: 1.5rem;
+    }
+    .contPrincipal, .graficos {
+        font-size: 1.3rem;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .menu li {
+        font-size: 1.2rem;
+    }
+    .gastoItem > h3, .gastoItem > p {
+        font-size: 1.2rem;
+    }
+
+    main {
+        justify-content: center;
+        align-items: start;
+        flex-direction: row;
+        height: 100vh;
+    }
+    .contPrincipal {
+        margin: 100px 20px 20px 200px;
+        height: 520px;
+        width: 40vw;
+    }
+    .graficos {
+        margin: 100px 200px 20px 20px;
+        width: 40vw;
+        height: 520px;
     }
 }
