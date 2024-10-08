@@ -30,6 +30,7 @@
 body {
     background-color: var(--corfundo);
     font-family: "Roboto", sans-serif;
+    overflow-y: auto;
 }
 
 header {
@@ -97,10 +98,10 @@ header {
 
 main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+
 }
 
 .contPrincipal {
@@ -109,6 +110,7 @@ main {
     align-items: center;
     background-color: var(--corfundo);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    margin: 80px 0 10px 0;
     width: 80vw;
     height: 80vh;
     padding: 10px;
@@ -233,6 +235,19 @@ input, #tipoGasto, option, #btnAdd{
     color: var(--corverde2);
 }
 
+.graficos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--corfundo);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    width: 80vw;
+    height: 50vh;
+    margin: 10px 0 80px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -240,9 +255,9 @@ footer {
     background-color: hsla(125, 18%, 25%, 0.6);
     margin-top: 2px;
     padding: 2px;
-    width: 100vw;
+    width: 100%;
     height: 50px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     font-size: 12px;
 }
@@ -250,10 +265,22 @@ footer {
 /*Responsividade*/
 /*TELAS MÉDIAS*/
 @media screen and (min-width: 768px) {
-
+    
 }
 
 /*TELAS GRANDES*/
 @media screen and (min-width: 1024px) {
-
+    main {
+        justify-content: start;
+        flex-direction: row;
+    }
+    .contPrincipal {
+        margin: 80px 10px 20px 10px;
+        height: 58vw;
+    }
+    .graficos {
+        margin: 40px 10px 20px 10px;
+        width: 50vw;
+        height: ;
+    }
 }
