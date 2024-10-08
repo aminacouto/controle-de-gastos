@@ -272,14 +272,15 @@ footer {
 @media screen and (min-width: 1024px) {
     main {
         justify-content: start;
+        align-items: start;
         flex-direction: row;
     }
     .contPrincipal {
         margin: 80px 10px 20px 10px;
-        height: 58vw;
+        height: 45vw;
     }
     .graficos {
-        margin: 40px 10px 20px 10px;
+        margin: 80px 10px 20px 10px;
         width: 50vw;
         height: ;
     }
