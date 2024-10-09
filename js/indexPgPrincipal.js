@@ -14,12 +14,11 @@ let meuGrafico;
 
 carregarGastosDoLocalStorage();
 
-/**/
 function addGasto() {
     const nomeGasto = document.getElementById('nomeGasto').value;
     const valorGasto = document.getElementById('valorGasto').value;
     const tipoGasto = document.getElementById('tipoGasto').value;
-    const categoria = document.getElementById ('categoria').value;
+    const categoria = document.getElementById('categoria').value;
     const dataGasto = document.getElementById('dataGasto').value;
 
     // Verificando se os campos foram preenchidos
@@ -36,7 +35,8 @@ function addGasto() {
         mesesGastos[mesAno].push({
             nome: nomeGasto,
             valor: parseFloat(valorGasto),
-            data: dataGasto
+            data: dataGasto,
+            categoria: categoria
         });
 
         // Ordena os gastos por data
@@ -53,12 +53,10 @@ function addGasto() {
         salvarGastosNoLocalStorage();
 
         atualizarMeses();
+        
     } else {
         alert("Preencha todos os campos!");
     }
-    // Atualizar o gráfico com os novos dados
-    meuGrafico.data.datasets[0].data = [/* novos dados */];
-    meuGrafico.update();
 }
 
 function salvarGastosNoLocalStorage() {
@@ -90,16 +88,19 @@ function atualizarMeses() {
             novoGasto.classList.add('gastoItem');
             novoGasto.innerHTML = `
                 <h3>${gasto.nome} <p>${dataFormatada}</p></h3>
-                <p>Valor: R$ ${gasto.valor} <button id="delete" onclick="removerGasto('${mesSelecionado}', ${index})">Remover</button></p>
-                
+                <p>Valor: R$ ${gasto.valor.toFixed(2)} <button id="delete" onclick="removerGasto('${mesSelecionado}', ${index})">Remover</button></p>
             `;
             secaoMes.appendChild(novoGasto);
         });
 
         listaGastos.appendChild(secaoMes);
         document.getElementById('mesAtual').textContent = mesSelecionado;
+
+        // Atualiza o gráfico com os novos dados
+        atualizarGrafico();
     }
 }
+
 function removerGasto(mesAno, index) {
     if (mesesGastos[mesAno]) {
         // Remove o gasto pelo índice
@@ -133,15 +134,12 @@ function navegarMeses(direcao) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const ctx = document.querySelector('.meuGrafico').getContext('2d');
-
-    // Exemplo de dados para o gráfico
-    const dados = {
-        labels: ['Alimentação', 'Moradia', 'Transporte', 'Educação', 'Saúde', 'Lazer'],
+function atualizarGrafico() {
+    const dadosGrafico = {
+        labels: Object.keys(mesesGastos),
         datasets: [{
             label: 'Gastos Mensais',
-            data: [300, 500, 150, 200, 400, 350], 
+            data: Object.values(mesesGastos).map(gastos => gastos.reduce((total, gasto) => total + gasto.valor, 0)),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -162,18 +160,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }]
     };
 
-    const config = {
-        type: 'bar', // tipo do gráfico
-        data: dados,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    // Atualiza os dados do gráfico
+    if (meuGrafico) {
+        meuGrafico.data = dadosGrafico;
+        meuGrafico.update();
+    } else {
+        const ctx = document.querySelector('.meuGrafico').getContext('2d');
+        meuGrafico = new Chart(ctx, {
+            type: 'pie', // tipo do gráfico
+            data: dadosGrafico,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    };
+        });
+    }
+}
 
-    // Cria o gráfico
-    const meuGrafico = new Chart(ctx, config);
+document.addEventListener('DOMContentLoaded', (event) => {
+    carregarGastosDoLocalStorage();
 });
