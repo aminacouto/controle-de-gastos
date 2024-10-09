@@ -10,7 +10,6 @@ function abreMenu() {
 let mesesGastos = {}; // Armazena as seções de gastos por mês, incluindo os itens de cada mês
 let mesIndexAtual = 0; // Índice do mês atual para navegação
 const listaGastos = document.querySelector('.listaGastos');
-let meuGrafico;
 
 carregarGastosDoLocalStorage();
 
@@ -96,8 +95,6 @@ function atualizarMeses() {
         listaGastos.appendChild(secaoMes);
         document.getElementById('mesAtual').textContent = mesSelecionado;
 
-        // Atualiza o gráfico com os novos dados
-        atualizarGrafico();
     }
 }
 
@@ -133,53 +130,3 @@ function navegarMeses(direcao) {
         atualizarMeses();
     }
 }
-
-function atualizarGrafico() {
-    const dadosGrafico = {
-        labels: Object.keys(mesesGastos),
-        datasets: [{
-            label: 'Gastos Mensais',
-            data: Object.values(mesesGastos).map(gastos => gastos.reduce((total, gasto) => total + gasto.valor, 0)),
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    };
-
-    // Atualiza os dados do gráfico
-    if (meuGrafico) {
-        meuGrafico.data = dadosGrafico;
-        meuGrafico.update();
-    } else {
-        const ctx = document.querySelector('.meuGrafico').getContext('2d');
-        meuGrafico = new Chart(ctx, {
-            type: 'pie', // tipo do gráfico
-            data: dadosGrafico,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    carregarGastosDoLocalStorage();
-});
