@@ -71,8 +71,9 @@ header {
     border: none;
 }
 #btnBurguer:hover{
+    background-color: var(--corverde);
+    border-radius: 10px;
     cursor: pointer;
-    background-color: var(--corverde2);
 }
 .menu {
     display: none;
@@ -83,19 +84,25 @@ header {
     right: 0px;
     top: 56px;
     z-index: 1000;
-    padding: 10px;
+    width: 90px;
+    padding: 4px;
 }
 
 .menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     list-style-type: none;
-    cursor: pointer;
     padding: 10px 15px;
 }
 .menu li:hover{
     background-color: var(--corverde);
     border-radius: 10px;
+    cursor: pointer;
 }
-
+a{
+    text-decoration: none;
+}
 main {
     display: flex;
     flex-direction: column;
