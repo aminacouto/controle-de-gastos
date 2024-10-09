@@ -35,8 +35,11 @@
         <aside class="navegador"> <!--MENU?-->
         </aside>
         <section class="contPrincipal">
-            <section class="formulario">
+            <div class="tituloConPrincipal">
                 <h2>Adicionar Gastos</h2>
+                <button id="newGasto" onclick="openform()">+</button>
+            </div>
+            <section class="formulario" id="formulario">
                 <input type="text" id="nomeGasto" placeholder="Nome">
                 <input type="number" id="valorGasto" placeholder="Valor">
                 <select name="" id="tipoGasto">

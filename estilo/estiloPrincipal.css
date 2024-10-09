@@ -123,9 +123,26 @@ main {
     padding: 10px;
     border-radius: 10px;
 }
+.tituloConPrincipal{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#newGasto{
+    border: none;
+    border-radius: 8px;
+    padding: 0px 8px;
+    color: aliceblue;
+    background-color: var(--corverde);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+#newGasto:hover {
+    background-color: var(--corverde2);
+    cursor: pointer;
+}
 
 .formulario {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 90%;
     gap: 10px;
@@ -155,6 +172,7 @@ input, #tipoGasto, option, #btnAdd, #categoria{
     width: 90%;
     margin-top: 20px;
     border-top:  2px solid var(--corverde);
+    padding: 10px 0 0 0;
 }
 #btnAnterior, #btnProximo {
     border: none;

@@ -6,6 +6,14 @@ function abreMenu() {
         menu.style.display = 'block';
     }
 }
+function openform(){
+    const formulario = document.getElementById('formulario');
+    if (formulario.style.display === 'flex') {
+        formulario.style.display = 'none';
+    } else {
+        formulario.style.display = 'flex';
+    }
+}
 
 let mesesGastos = {}; // Armazena as seções de gastos por mês, incluindo os itens de cada mês
 let mesIndexAtual = 0; // Índice do mês atual para navegação
